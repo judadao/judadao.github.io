@@ -54,7 +54,7 @@ const CONFIG = {
   seo: {
     title: 'Portfolio of DD Ju',
     description: '',
-    imageURL: '',
+    imageURL: '/public/logo.png',
   },
   social: {
     linkedin: 'DD Ju',
