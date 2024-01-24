@@ -52,7 +52,7 @@ const CONFIG = {
     },
   },
   seo: {
-    title: 'Portfolio of DD Ju',
+    title: 'Portfolio of DD',
     description: '',
     imageURL: '/public/logo.png',
   },
