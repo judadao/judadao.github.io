@@ -66,7 +66,7 @@ const CONFIG = {
     dribbble: '',
     behance: '',
     medium: '',
-    dev: 'JUDD',
+    dev: 'judd',
     stackoverflow: '', // example: '1/jeff-atwood'
     skype: '',
     telegram: '',
@@ -135,7 +135,7 @@ const CONFIG = {
   // Display articles from your medium or dev account. (Optional)
   blog: {
     source: 'dev', // medium | dev
-    username: 'JUDD', // to hide blog section, keep it empty
+    username: 'judd', // to hide blog section, keep it empty
     limit: 3, // How many articles to display. Max is 10.
   },
   googleAnalytics: {
