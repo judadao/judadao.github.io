@@ -42,7 +42,7 @@ const CONFIG = {
     imageURL: '',
   },
   social: {
-    linkedin: '達道 朱',
+    linkedin: '朱 達道',
     twitter: '',
     mastodon: '',
     facebook: '',
