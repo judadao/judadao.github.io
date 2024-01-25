@@ -32,22 +32,7 @@ const CONFIG = {
       header: '',
       // To hide the `External Projects` section, keep it empty.
       projects: [
-        {
-          title: 'Project Name',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
-          imageUrl:
-            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-          link: 'https://example.com',
-        },
-        {
-          title: 'Project Name',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
-          imageUrl:
-            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-          link: 'https://example.com',
-        },
+        
       ],
     },
   },
@@ -57,7 +42,7 @@ const CONFIG = {
     imageURL: '',
   },
   social: {
-    linkedin: 'DD Ju',
+    linkedin: '達道 朱',
     twitter: '',
     mastodon: '',
     facebook: '',
@@ -108,16 +93,16 @@ const CONFIG = {
   ],
   educations: [
     {
-      institution: 'Institution Name',
-      degree: 'Degree',
-      from: '2015',
-      to: '2019',
+      institution: 'National Chung Cheng University',
+      degree: 'Master of Science in Computer Science',
+      from: '2023',
+      to: '2021',
     },
     {
       institution: 'Institution Name',
-      degree: 'Degree',
-      from: '2012',
-      to: '2014',
+      degree: 'Bachelor of Science in Computer Science',
+      from: '2021',
+      to: '2016',
     },
   ],
   // Display articles from your medium or dev account. (Optional)
