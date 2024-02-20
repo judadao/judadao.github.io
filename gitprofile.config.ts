@@ -42,7 +42,7 @@ const CONFIG = {
     imageURL: '',
   },
   social: {
-    linkedin: '朱-達道',
+    linkedin: '達道-朱',
     twitter: '',
     mastodon: '',
     facebook: '',
@@ -104,7 +104,7 @@ const CONFIG = {
   blog: {
     source: 'dev', // medium | dev
     username: 'judd', // to hide blog section, keep it empty
-    limit: 3, // How many articles to display. Max is 10.
+    limit: 10, // How many articles to display. Max is 10.
   },
   googleAnalytics: {
     id: '', // GA3 tracking id/GA4 tag id UA-XXXXXXXXX-X | G-XXXXXXXXXX
