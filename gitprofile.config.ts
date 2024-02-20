@@ -32,9 +32,9 @@ const CONFIG = {
     },
   },
   seo: {
-    title: 'Portfolio of  DD',
+    title: 'Portfolio of DD',
     description: 'DD Blog',
-    imageURL: 'logo_git.png',
+    imageURL: '',
   },
   social: {
     linkedin: '達道-朱',
