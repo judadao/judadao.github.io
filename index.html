@@ -6,94 +6,156 @@
   <title>Harry Ju</title>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 980px;
-      margin: 60px auto;
-      padding: 24px;
-      line-height: 1.7;
-      color: #1f2937;
-      background: #f8fafc;
+    * {
+      box-sizing: border-box;
     }
 
-    .hero,
-    section {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      padding: 32px;
-      margin-bottom: 24px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #e5e7eb;
+      background:
+        radial-gradient(circle at top left, #1e3a8a 0, transparent 32%),
+        linear-gradient(135deg, #020617 0%, #0f172a 45%, #111827 100%);
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 24px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 36px;
+      align-items: center;
+      padding: 44px;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      border-radius: 28px;
+      background: rgba(15, 23, 42, 0.78);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(14px);
     }
 
     h1 {
-      font-size: 52px;
-      margin: 0 0 8px;
-      color: #111827;
+      font-size: 56px;
+      line-height: 1.05;
+      margin: 0 0 16px;
+      color: #f8fafc;
     }
 
     h2 {
-      margin-top: 0;
-      color: #111827;
-      border-bottom: 1px solid #e5e7eb;
-      padding-bottom: 10px;
+      margin: 0 0 20px;
+      color: #f8fafc;
+      font-size: 28px;
     }
 
     .subtitle {
+      color: #60a5fa;
       font-size: 22px;
-      color: #2563eb;
-      font-weight: 600;
-      margin-bottom: 16px;
+      font-weight: 700;
+      margin-bottom: 14px;
     }
 
     .contact {
-      color: #6b7280;
+      color: #94a3b8;
       margin-bottom: 24px;
+    }
+
+    .summary {
+      max-width: 640px;
+      color: #cbd5e1;
+      font-size: 17px;
+    }
+
+    .actions {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .button {
       display: inline-block;
       padding: 12px 22px;
-      background: #111827;
-      color: white;
-      text-decoration: none;
       border-radius: 999px;
-      font-weight: 600;
-      margin-right: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      background: #2563eb;
+      color: white;
     }
 
     .button.secondary {
-      background: #dbeafe;
-      color: #1d4ed8;
+      background: rgba(255, 255, 255, 0.08);
+      color: #dbeafe;
+      border: 1px solid rgba(147, 197, 253, 0.3);
+    }
+
+    .photo-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .photo {
+      width: 260px;
+      height: 320px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      background: #111827;
+    }
+
+    section {
+      margin-top: 24px;
+      padding: 32px;
+      border-radius: 24px;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
     }
 
     .company {
       font-size: 20px;
-      font-weight: 700;
-      color: #111827;
-      margin-top: 20px;
+      font-weight: 800;
+      color: #f8fafc;
+      margin-top: 18px;
     }
 
     .date {
-      color: #6b7280;
+      color: #94a3b8;
       font-size: 14px;
-      margin-bottom: 8px;
+      margin: 4px 0 10px;
     }
 
     .label {
       display: inline-block;
-      font-size: 13px;
-      font-weight: 700;
-      color: #1d4ed8;
-      background: #dbeafe;
+      margin-top: 12px;
       padding: 4px 10px;
       border-radius: 999px;
-      margin-top: 12px;
+      background: rgba(37, 99, 235, 0.18);
+      color: #93c5fd;
+      font-size: 13px;
+      font-weight: 800;
     }
 
     ul {
+      margin: 10px 0 0;
       padding-left: 20px;
-      margin-top: 8px;
+      color: #cbd5e1;
+    }
+
+    li {
+      margin-bottom: 6px;
     }
 
     .skills {
@@ -103,149 +165,156 @@
     }
 
     .skill {
-      background: #eef2ff;
-      color: #3730a3;
       padding: 8px 14px;
       border-radius: 999px;
-      font-weight: 600;
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      color: #dbeafe;
+      font-weight: 700;
       font-size: 14px;
+    }
+
+    .highlight {
+      color: #93c5fd;
+      font-weight: 700;
+    }
+
+    @media (max-width: 800px) {
+      .container {
+        padding: 24px 14px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 26px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo {
+        width: 220px;
+        height: 280px;
+      }
+
+      .button {
+        width: 100%;
+        text-align: center;
+      }
     }
   </style>
 </head>
 
 <body>
+  <main class="container">
 
-  <div class="hero">
-    <h1>Ju Ta Tao (Harry)</h1>
+    <div class="hero">
+      <div>
+        <h1>Ju Ta Tao<br>(Harry)</h1>
+        <div class="subtitle">Embedded Software Engineer</div>
+        <div class="contact">Taiwan · harryju3@gmail.com · (+886) 988-633-765</div>
 
-    <div class="subtitle">
-      Embedded Software Engineer
+        <p class="summary">
+          Embedded software engineer focused on
+          <span class="highlight">RTOS</span>,
+          <span class="highlight">OT protocols</span>,
+          and <span class="highlight">system architecture</span>.
+        </p>
+
+        <div class="actions">
+          <a class="button" href="./assets/English_CV.pdf" target="_blank">
+            View Resume
+          </a>
+          <a class="button secondary" href="./assets/English_CV.pdf" download="Harry_Ju_Resume.pdf">
+            Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="photo-wrap">
+        <img class="photo" src="./assets/profile.png" alt="Harry Ju profile photo" />
+      </div>
     </div>
 
-    <div class="contact">
-      Taiwan · harryju3@gmail.com · (+886) 988-633-765
-    </div>
+    <section>
+      <h2>Skills</h2>
+      <div class="skills">
+        <span class="skill">C / C++ / Python</span>
+        <span class="skill">Embedded Linux</span>
+        <span class="skill">Zephyr</span>
+        <span class="skill">FreeRTOS</span>
+        <span class="skill">Modbus TCP</span>
+        <span class="skill">MQTT</span>
+        <span class="skill">SNMP</span>
+        <span class="skill">CI/CD</span>
+        <span class="skill">Docker</span>
+        <span class="skill">ARM</span>
+        <span class="skill">AI / Deep Learning</span>
+      </div>
+    </section>
 
-    <p>
-      Embedded software engineer focused on RTOS, OT protocols,
-      and system architecture.
-    </p>
+    <section>
+      <h2>Work Experience</h2>
 
-    <a class="button" href="./assets/English_CV.pdf" target="_blank">
-      View Resume
-    </a>
+      <div class="company">Moxa Inc. — Software Engineer R&D</div>
+      <div class="date">2023 – Present</div>
 
-    <a class="button secondary" href="./assets/English_CV.pdf" download>
-      Download PDF
-    </a>
-  </div>
+      <span class="label">Product Development</span>
+      <ul>
+        <li>Designed embedded OT and protocol architectures.</li>
+        <li>Developed P2P and Modbus communication frameworks.</li>
+        <li>Maintained CI/CD workflows for legacy products.</li>
+        <li>Optimized system reliability on constrained platforms.</li>
+      </ul>
 
-  <section>
-    <h2>Skills</h2>
+      <span class="label">Customer Support</span>
+      <ul>
+        <li>Resolved customer issues across protocol and embedded systems.</li>
+      </ul>
 
-    <div class="skills">
-      <span class="skill">C / C++ / Python</span>
-      <span class="skill">Embedded Linux</span>
-      <span class="skill">Zephyr</span>
-      <span class="skill">FreeRTOS</span>
-      <span class="skill">Modbus TCP</span>
-      <span class="skill">MQTT</span>
-      <span class="skill">SNMP</span>
-      <span class="skill">CI/CD</span>
-      <span class="skill">Docker</span>
-      <span class="skill">ARM</span>
-      <span class="skill">AI / Deep Learning</span>
-    </div>
-  </section>
+      <span class="label">Collaboration</span>
+      <ul>
+        <li>Worked with PM, QA, and front-end teams on embedded products.</li>
+      </ul>
 
-  <section>
-    <h2>Work Experience</h2>
+      <div class="company">Academia Sinica — Intern</div>
+      <div class="date">Jul. 2019 – Sep. 2019</div>
+      <ul>
+        <li>Developed speech recognition web applications.</li>
+      </ul>
+    </section>
 
-    <div class="company">
-      Moxa Inc. — Software Engineer R&D
-    </div>
+    <section>
+      <h2>Education</h2>
 
-    <div class="date">
-      2023 – Present
-    </div>
+      <div class="grid">
+        <div>
+          <div class="company">National Chung Cheng University</div>
+          <div class="date">2020 – 2022</div>
+          <p>M.S. in Computer Science and Information Engineering</p>
+          <ul>
+            <li>AI and speech recognition research using PyTorch.</li>
+            <li>Focused on low-resource speech recognition systems.</li>
+          </ul>
+        </div>
 
-    <div class="label">
-      Product Development
-    </div>
+        <div>
+          <div class="company">Chang Gung University</div>
+          <div class="date">2015 – 2020</div>
+          <p>B.S. in Computer Science and Information Engineering</p>
+          <ul>
+            <li>Built AI and speech recognition projects using TensorFlow and Django.</li>
+            <li>Developed embedded and RTOS-based ARM projects.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <ul>
-      <li>Designed embedded OT and protocol architectures.</li>
-      <li>Developed P2P and Modbus communication frameworks.</li>
-      <li>Maintained CI/CD workflows for legacy products.</li>
-      <li>Optimized system reliability on constrained platforms.</li>
-    </ul>
-
-    <div class="label">
-      Customer Support
-    </div>
-
-    <ul>
-      <li>Resolved customer issues across protocol and embedded systems.</li>
-    </ul>
-
-    <div class="label">
-      Collaboration
-    </div>
-
-    <ul>
-      <li>Worked with PM, QA, and front-end teams on embedded products.</li>
-    </ul>
-
-    <div class="company">
-      Academia Sinica — Intern
-    </div>
-
-    <div class="date">
-      Jul. 2019 – Sep. 2019
-    </div>
-
-    <ul>
-      <li>Developed speech recognition web applications.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Education</h2>
-
-    <div class="company">
-      National Chung Cheng University
-    </div>
-
-    <div class="date">
-      2020 – 2022
-    </div>
-
-    <p>
-      M.S. in Computer Science and Information Engineering
-    </p>
-
-    <ul>
-      <li>AI and speech recognition research using PyTorch and deep learning models.</li>
-      <li>Research focused on low-resource speech recognition systems.</li>
-    </ul>
-
-    <div class="company">
-      Chang Gung University
-    </div>
-
-    <div class="date">
-      2015 – 2020
-    </div>
-
-    <p>
-      B.S. in Computer Science and Information Engineering
-    </p>
-
-    <ul>
-      <li>Built AI and speech recognition projects using TensorFlow and Django.</li>
-      <li>Developed embedded and RTOS-based ARM projects.</li>
-    </ul>
-  </section>
-
+  </main>
 </body>
 </html>
