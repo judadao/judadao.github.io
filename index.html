@@ -8,52 +8,106 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 900px;
+      max-width: 980px;
       margin: 60px auto;
-      padding: 20px;
+      padding: 24px;
       line-height: 1.7;
-      color: #222;
-      background: #fff;
+      color: #1f2937;
+      background: #f8fafc;
+    }
+
+    .hero,
+    section {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
     }
 
     h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
+      font-size: 52px;
+      margin: 0 0 8px;
+      color: #111827;
     }
 
     h2 {
-      margin-top: 50px;
-      border-bottom: 1px solid #ddd;
+      margin-top: 0;
+      color: #111827;
+      border-bottom: 1px solid #e5e7eb;
       padding-bottom: 10px;
     }
 
     .subtitle {
-      font-size: 20px;
-      color: #666;
-      margin-bottom: 30px;
+      font-size: 22px;
+      color: #2563eb;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .contact {
+      color: #6b7280;
+      margin-bottom: 24px;
     }
 
     .button {
       display: inline-block;
-      padding: 12px 20px;
-      background: black;
+      padding: 12px 22px;
+      background: #111827;
       color: white;
       text-decoration: none;
-      border-radius: 8px;
-      margin-top: 20px;
+      border-radius: 999px;
+      font-weight: 600;
+      margin-right: 10px;
     }
 
-    ul {
-      padding-left: 20px;
+    .button.secondary {
+      background: #dbeafe;
+      color: #1d4ed8;
     }
 
     .company {
-      font-weight: bold;
+      font-size: 20px;
+      font-weight: 700;
+      color: #111827;
       margin-top: 20px;
     }
 
     .date {
-      color: #666;
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .label {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      color: #1d4ed8;
+      background: #dbeafe;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-top: 12px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      background: #eef2ff;
+      color: #3730a3;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 600;
       font-size: 14px;
     }
   </style>
@@ -61,67 +115,137 @@
 
 <body>
 
-  <h1>Ju Ta Tao (Harry)</h1>
+  <div class="hero">
+    <h1>Ju Ta Tao (Harry)</h1>
 
-  <div class="subtitle">
-    Embedded Software Engineer
+    <div class="subtitle">
+      Embedded Software Engineer
+    </div>
+
+    <div class="contact">
+      Taiwan · harryju3@gmail.com · (+886) 988-633-765
+    </div>
+
+    <p>
+      Embedded software engineer focused on RTOS, OT protocols,
+      and system architecture.
+    </p>
+
+    <a class="button" href="/assets/English_CV.pdf" target="_blank">
+      View Resume
+    </a>
+
+    <a class="button secondary" href="/assets/English_CV.pdf" download>
+      Download PDF
+    </a>
   </div>
 
-  <p>
-    Embedded software engineer with experience in RTOS, OT protocols,
-    and embedded system architecture design. Focused on building stable
-    and reliable systems for resource-constrained environments.
-  </p>
+  <section>
+    <h2>Skills</h2>
 
-  <a class="button" href="assets/English_CV.pdf" target="_blank">
-    Download Resume
-  </a>
+    <div class="skills">
+      <span class="skill">C / C++ / Python</span>
+      <span class="skill">Embedded Linux</span>
+      <span class="skill">Zephyr</span>
+      <span class="skill">FreeRTOS</span>
+      <span class="skill">Modbus TCP</span>
+      <span class="skill">MQTT</span>
+      <span class="skill">SNMP</span>
+      <span class="skill">CI/CD</span>
+      <span class="skill">Docker</span>
+      <span class="skill">ARM</span>
+      <span class="skill">AI / Deep Learning</span>
+    </div>
+  </section>
 
-  <h2>Experience</h2>
+  <section>
+    <h2>Work Experience</h2>
 
-  <div class="company">
-    Moxa Inc.
-  </div>
+    <div class="company">
+      Moxa Inc. — Software Engineer R&D
+    </div>
 
-  <div class="date">
-    2023 – Present
-  </div>
+    <div class="date">
+      2023 – Present
+    </div>
 
-  <ul>
-    <li>Function owner for protocol modules across embedded products</li>
-    <li>Designed OT feature architectures and embedded systems</li>
-    <li>Optimized systems for resource-constrained hardware</li>
-    <li>Collaborated with PM, QA, and front-end teams</li>
-  </ul>
+    <div class="label">
+      Product Development
+    </div>
 
-  <div class="company">
-    Academia Sinica Intern
-  </div>
+    <ul>
+      <li>Designed embedded OT and protocol architectures.</li>
+      <li>Developed P2P and Modbus communication frameworks.</li>
+      <li>Maintained CI/CD workflows for legacy products.</li>
+      <li>Optimized system reliability on constrained platforms.</li>
+    </ul>
 
-  <div class="date">
-    Jul. 2018 – Sep. 2018
-  </div>
+    <div class="label">
+      Customer Support
+    </div>
 
-  <ul>
-    <li>Designed Taiwanese speech recording and AI speech recognition website</li>
-  </ul>
+    <ul>
+      <li>Resolved customer issues across protocol and embedded systems.</li>
+    </ul>
 
-  <h2>Skills</h2>
+    <div class="label">
+      Collaboration
+    </div>
 
-  <ul>
-    <li>C / C++ / Python</li>
-    <li>Zephyr / FreeRTOS</li>
-    <li>MQTT / Modbus TCP / SNMP</li>
-    <li>Docker / CI/CD</li>
-    <li>Embedded Linux</li>
-  </ul>
+    <ul>
+      <li>Worked with PM, QA, and front-end teams on embedded products.</li>
+    </ul>
 
-  <h2>Education</h2>
+    <div class="company">
+      Academia Sinica — Intern
+    </div>
 
-  <p>
-    M.S. Computer Science and Information Engineering<br>
-    National Chung Cheng University
-  </p>
+    <div class="date">
+      Jul. 2019 – Sep. 2019
+    </div>
+
+    <ul>
+      <li>Developed speech recognition web applications.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+
+    <div class="company">
+      National Chung Cheng University
+    </div>
+
+    <div class="date">
+      2020 – 2022
+    </div>
+
+    <p>
+      M.S. in Computer Science and Information Engineering
+    </p>
+
+    <ul>
+      <li>AI and speech recognition research using PyTorch and deep learning models.</li>
+      <li>Research focused on low-resource speech recognition systems.</li>
+    </ul>
+
+    <div class="company">
+      Chang Gung University
+    </div>
+
+    <div class="date">
+      2015 – 2020
+    </div>
+
+    <p>
+      B.S. in Computer Science and Information Engineering
+    </p>
+
+    <ul>
+      <li>Built AI and speech recognition projects using TensorFlow and Django.</li>
+      <li>Developed embedded and RTOS-based ARM projects.</li>
+    </ul>
+  </section>
 
 </body>
 </html>
