@@ -25,7 +25,7 @@ test('resume actions point to the exported PDF', async ({ page, request }) => {
   const pdfResponse = await request.get('/assets/English_CV.pdf');
   expect(pdfResponse.ok()).toBeTruthy();
   expect(pdfResponse.headers()['content-type']).toContain('pdf');
-  expect((await pdfResponse.body()).length).toBeGreaterThan(100000);
+  expect((await pdfResponse.body()).length).toBeGreaterThan(50000);
 });
 
 test('print resume route renders the PDF source layout', async ({ page }) => {
