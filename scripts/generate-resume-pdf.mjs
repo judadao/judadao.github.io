@@ -81,6 +81,8 @@ try {
     path: 'public/assets/English_CV.pdf',
     format: 'A4',
     printBackground: true,
+    tagged: false,
+    outline: false,
     margin: {
       top: '0',
       right: '0',

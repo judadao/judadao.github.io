@@ -1,310 +1,262 @@
-import { Box, Chip, Container, Divider, Grid, Typography } from '@mui/material';
-
 const skills = [
-  'C / C++ / Python',
-  'Embedded Linux',
-  'Zephyr',
-  'FreeRTOS',
-  'Modbus TCP',
-  'MQTT',
-  'SNMP',
-  'CI/CD',
-  'Docker',
-  'ARM',
-  'AI / Deep Learning',
+  'C/C++/Python',
+  'RTOS development experience: Zephyr, FreeRTOS',
+  'OT protocol implementation: Modbus TCP, SNMP, MQTT',
+  'Development environment setup: CI/CD, Docker',
+  'AI-related research experience during undergraduate and graduate studies',
 ];
 
-const education = [
-  {
-    school: 'National Chung Cheng University',
-    period: '2020 - 2022',
-    degree: 'M.S. in Computer Science and Information Engineering',
-    items: [
-      'AI and speech recognition research using PyTorch.',
-      'Focused on low-resource speech recognition systems.',
-    ],
-  },
-  {
-    school: 'Chang Gung University',
-    period: '2015 - 2020',
-    degree: 'B.S. in Computer Science and Information Engineering',
-    items: [
-      'Built AI and speech recognition projects using TensorFlow and Django.',
-      'Developed embedded and RTOS-based ARM projects.',
-    ],
-  },
+const moxaProductItems = [
+  'Served as the function owner for protocol modules across multiple embedded products.',
+  'Designed and implemented system-level architectures for OT features.',
+  'Designed and optimized embedded systems for resource-constrained hardware environments with a focus on stability and reliability.',
 ];
 
-const workGroups = [
-  {
-    label: 'Product Development',
-    items: [
-      'Designed embedded OT and protocol architectures.',
-      'Developed P2P and Modbus communication frameworks.',
-      'Maintained CI/CD workflows for legacy products.',
-      'Optimized system reliability on constrained platforms.',
-    ],
-  },
-  {
-    label: 'Customer Support',
-    items: ['Resolved customer issues across protocol and embedded systems.'],
-  },
-  {
-    label: 'Collaboration',
-    items: ['Worked with PM, QA, and front-end teams on embedded products.'],
-  },
+const moxaCollaborationItems = [
+  'Coordinated with PMs, QA, and front-end teams to ensure cross-functional alignment on customer needs and product specifications.',
 ];
 
-function SectionTitle({ children }: Readonly<{ children: React.ReactNode }>) {
-  return (
-    <Typography
-      component="h2"
-      sx={{
-        color: 'primary.main',
-        fontSize: 19,
-        fontWeight: 900,
-        letterSpacing: 0,
-        lineHeight: 1.1,
-        mb: 1.05,
-      }}
-    >
-      {children}
-    </Typography>
-  );
-}
+const moxaSupportItems = [
+  'Resolved customer issues across protocol behavior, embedded systems, and deployment environments.',
+];
 
 function BulletList({
   items,
-  dense = false,
-}: Readonly<{ items: string[]; dense?: boolean }>) {
+  marker = 'square',
+}: Readonly<{ items: string[]; marker?: 'diamond' | 'square' }>) {
   return (
-    <Box component="ul" sx={{ color: 'text.secondary', pl: 2.15, my: 0.55 }}>
+    <ul className={`resume-list resume-list-${marker}`}>
       {items.map((item) => (
-        <Typography
-          component="li"
-          key={item}
-          sx={{
-            fontSize: dense ? 10.8 : 11.5,
-            lineHeight: dense ? 1.28 : 1.35,
-            mb: dense ? 0.22 : 0.34,
-          }}
-        >
-          {item}
-        </Typography>
+        <li key={item}>{item}</li>
       ))}
-    </Box>
-  );
-}
-
-function InfoPanel() {
-  return (
-    <Box
-      sx={{
-        bgcolor: 'primary.light',
-        p: 1.9,
-        minHeight: '122mm',
-      }}
-    >
-      <Typography
-        component="h1"
-        sx={{
-          color: 'text.primary',
-          fontSize: 31,
-          fontWeight: 900,
-          letterSpacing: 0,
-          lineHeight: 0.98,
-        }}
-      >
-        Ju Ta Tao
-        <Box component="span" sx={{ display: 'block', color: 'primary.main' }}>
-          (Harry)
-        </Box>
-      </Typography>
-
-      <Typography sx={{ mt: 1.2, color: 'text.secondary', fontSize: 11.7 }}>
-        Embedded software engineer focused on RTOS, OT protocols, and system
-        architecture.
-      </Typography>
-
-      <Divider sx={{ my: 1.6 }} />
-
-      <SectionTitle>Contact</SectionTitle>
-      <Typography sx={{ color: 'text.secondary', fontSize: 11.2 }}>
-        Taiwan
-      </Typography>
-      <Typography sx={{ color: 'text.secondary', fontSize: 11.2 }}>
-        harryju3@gmail.com
-      </Typography>
-      <Typography sx={{ color: 'text.secondary', fontSize: 11.2 }}>
-        (+886) 988-633-765
-      </Typography>
-
-      <Divider sx={{ my: 1.6 }} />
-
-      <SectionTitle>Skills</SectionTitle>
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-        {skills.map((skill) => (
-          <Chip
-            key={skill}
-            label={skill}
-            color="primary"
-            variant="outlined"
-            size="small"
-            sx={{
-              height: 21,
-              bgcolor: '#ffffff',
-              '& .MuiChip-label': {
-                px: 0.7,
-                fontSize: 9.9,
-              },
-            }}
-          />
-        ))}
-      </Box>
-    </Box>
+    </ul>
   );
 }
 
 export default function ResumePage() {
   return (
-    <Box
-      component="main"
-      sx={{
-        minHeight: '100vh',
-        bgcolor: '#ffffff',
-      }}
-    >
-      <Container
-        maxWidth={false}
-        sx={{
-          width: '210mm',
-          height: '297mm',
-          p: '10mm 7mm',
-          bgcolor: '#ffffff',
-          overflow: 'hidden',
-        }}
-      >
-        <Grid container spacing={3.2} sx={{ height: '100%' }}>
-          <Grid size={4.1}>
-            <Box sx={{ bgcolor: 'primary.light', px: 1.5, py: 1.15, mb: 1.4 }}>
-              <Chip
-                label="Embedded Software Engineer"
-                color="primary"
-                size="small"
-              />
-            </Box>
+    <main className="resume-page">
+      <style>{`
+        .resume-page {
+          width: 210mm;
+          height: 297mm;
+          margin: 0 auto;
+          background: #ffffff;
+          color: #111827;
+          overflow: hidden;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 13.5px;
+          line-height: 1.45;
+        }
 
-            <Box
-              component="img"
-              src="/assets/resume-profile.jpg"
-              alt="Harry Ju profile photo"
-              sx={{
-                display: 'block',
-                width: '100%',
-                height: '50mm',
-                objectFit: 'cover',
-                objectPosition: 'center top',
-                border: '2px solid',
-                borderColor: 'primary.dark',
-                bgcolor: 'primary.dark',
-                mb: 3.7,
-              }}
-            />
+        .resume-hero {
+          display: grid;
+          grid-template-columns: 58mm 1fr;
+          gap: 10mm;
+          align-items: start;
+          padding: 7mm 9mm 0;
+        }
 
-            <InfoPanel />
-          </Grid>
+        .resume-photo {
+          width: 58mm;
+          height: 48mm;
+          object-fit: cover;
+          object-position: center top;
+          display: block;
+        }
 
-          <Grid size={7.9}>
-            <Box sx={{ mb: 2.8 }}>
-              <SectionTitle>Education</SectionTitle>
-              {education.map((item, index) => (
-                <Box
-                  key={item.school}
-                  sx={{
-                    border: '1px solid',
-                    borderColor: 'divider',
-                    borderRadius: 1,
-                    p: 1.35,
-                    bgcolor: '#fbfdff',
-                    mb: index === education.length - 1 ? 0 : 1.35,
-                  }}
-                >
-                  <Typography sx={{ fontWeight: 900, fontSize: 17.2, lineHeight: 1.08 }}>
-                    {item.school}
-                  </Typography>
-                  <Typography color="text.secondary" sx={{ fontSize: 11.4 }}>
-                    {item.period}
-                  </Typography>
-                  <Typography sx={{ mt: 0.45, fontSize: 12.2, lineHeight: 1.2 }}>
-                    {item.degree}
-                  </Typography>
-                  <BulletList items={item.items} />
-                </Box>
-              ))}
-            </Box>
+        .resume-name {
+          margin: 0 0 4mm;
+          font-size: 26px;
+          line-height: 1.05;
+          font-weight: 500;
+          letter-spacing: 0;
+        }
 
-            <Box>
-              <SectionTitle>Work Experience</SectionTitle>
-              <Typography sx={{ color: 'text.secondary', fontSize: 10.8, mb: 1.25 }}>
-                Embedded product development, industrial protocols, customer issue
-                resolution, and cross-functional delivery.
-              </Typography>
-              <Divider sx={{ borderColor: 'primary.main', borderBottomWidth: 2, mb: 1.4 }} />
+        .resume-brief {
+          margin: 0 0 2.6mm;
+          font-size: 12.2px;
+        }
 
-              <Typography sx={{ fontWeight: 900, fontSize: 15.4 }}>
-                Moxa Inc. | Software Engineer R&D
-              </Typography>
-              <Typography color="text.secondary" sx={{ fontSize: 10.8 }}>
-                2023 - Present
-              </Typography>
+        .resume-brief strong {
+          font-style: italic;
+          font-weight: 700;
+        }
 
-              <Grid container spacing={1.25} sx={{ mt: 1 }}>
-                {workGroups.map((group) => (
-                  <Grid size={group.label === 'Product Development' ? 12 : 6} key={group.label}>
-                    <Box
-                      sx={{
-                        border: '1px solid',
-                        borderColor: 'divider',
-                        borderRadius: 1,
-                        p: 1.05,
-                        bgcolor: '#fbfdff',
-                        minHeight: group.label === 'Product Development' ? '33mm' : '21mm',
-                      }}
-                    >
-                      <Chip label={group.label} size="small" sx={{ mb: 0.25 }} />
-                      <BulletList items={group.items} dense />
-                    </Box>
-                  </Grid>
-                ))}
-              </Grid>
+        .resume-contact {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 5mm;
+          align-items: center;
+          margin-top: 4.5mm;
+          font-size: 13px;
+        }
 
-              <Divider sx={{ my: 1.65 }} />
+        .resume-contact a {
+          color: #0057d8;
+        }
 
-              <Typography sx={{ fontWeight: 900, fontSize: 15.4 }}>
-                Academia Sinica | Intern
-              </Typography>
-              <Typography color="text.secondary" sx={{ fontSize: 10.8 }}>
-                Jul. 2019 - Sep. 2019
-              </Typography>
-              <Box
-                sx={{
-                  mt: 0.8,
-                  border: '1px solid',
-                  borderColor: 'divider',
-                  borderRadius: 1,
-                  p: 1.05,
-                  bgcolor: '#fbfdff',
-                }}
-              >
-                <BulletList
-                  dense
-                  items={['Developed speech recognition web applications.']}
-                />
-              </Box>
-            </Box>
-          </Grid>
-        </Grid>
-      </Container>
-    </Box>
+        .resume-band {
+          margin-top: 0;
+          padding: 3mm 9mm 4mm;
+          background: #eeeeee;
+        }
+
+        .resume-section-title {
+          margin: 0 0 2mm;
+          font-size: 20px;
+          line-height: 1.2;
+          font-weight: 800;
+          color: #111827;
+        }
+
+        .resume-about {
+          margin: 0 0 3.5mm;
+          font-size: 14px;
+          line-height: 1.65;
+          font-weight: 700;
+        }
+
+        .resume-list {
+          margin: 1.5mm 0 0;
+          padding-left: 10mm;
+        }
+
+        .resume-list li {
+          margin-bottom: 1.7mm;
+          padding-left: 1.5mm;
+        }
+
+        .resume-list-diamond {
+          list-style-type: '♦';
+        }
+
+        .resume-list-square {
+          list-style-type: square;
+        }
+
+        .resume-content {
+          padding: 5mm 9mm 0;
+        }
+
+        .resume-role {
+          margin: 3mm 0 1.2mm;
+          font-size: 17px;
+          font-weight: 800;
+        }
+
+        .resume-emphasis {
+          margin: 0 0 2mm 9mm;
+          font-style: italic;
+          font-weight: 700;
+          font-size: 14px;
+        }
+
+        .resume-date {
+          margin: 0 0 2.6mm 9mm;
+          font-style: italic;
+          font-size: 13px;
+        }
+
+        .resume-subgroup {
+          margin: 2.4mm 0 1.2mm 9mm;
+          font-size: 14px;
+        }
+
+        .resume-nested {
+          margin-left: 9mm;
+        }
+
+        @media print {
+          .resume-page {
+            margin: 0;
+            box-shadow: none;
+          }
+        }
+      `}</style>
+
+      <section className="resume-hero">
+        <img
+          className="resume-photo"
+          src="/assets/resume-profile.jpg"
+          alt="Harry Ju profile photo"
+        />
+
+        <div>
+          <h1 className="resume-name">Ju Ta Tao (Harry)</h1>
+
+          <p className="resume-brief">Education:</p>
+          <p className="resume-brief">
+            <strong>National Chung Cheng University (2020 - 2022):</strong>
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;
+            <strong>
+              Master of Computer Science and Information Engineering
+            </strong>
+          </p>
+
+          <p className="resume-brief">Working experience:</p>
+          <p className="resume-brief">
+            <strong>
+              Moxa Software Engineer R&D (2023~): Embedded Product Development
+            </strong>
+          </p>
+
+          <div className="resume-contact">
+            <span>Phone: (+886)988633765</span>
+            <span>
+              Email:{' '}
+              <a href="mailto:harryju3@gmail.com">harryju3@gmail.com</a>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section className="resume-band">
+        <h2 className="resume-section-title">About Me:</h2>
+        <p className="resume-about">
+          Enjoy building reliable systems, collaborating across teams, and
+          continuously learning new technologies. Outside of work, I stay active
+          through basketball and enjoy exploring technical topics.
+        </p>
+
+        <h2 className="resume-section-title">Skills:</h2>
+        <BulletList items={skills} marker="diamond" />
+      </section>
+
+      <section className="resume-content">
+        <h2 className="resume-section-title">Work Experience:</h2>
+
+        <h3 className="resume-role">Intern</h3>
+        <p className="resume-emphasis">
+          Institute of Information Science, Academia Sinica
+        </p>
+        <p className="resume-date">Jul. 2019 - Sep. 2019</p>
+        <div className="resume-nested">
+          <BulletList
+            items={['Designed a Taiwanese speech recording and AI speech recognition website.']}
+          />
+        </div>
+
+        <h3 className="resume-role">Companies</h3>
+        <p className="resume-emphasis">Moxa Inc.</p>
+        <p className="resume-date">2023 - Present</p>
+
+        <p className="resume-subgroup">Product Development</p>
+        <div className="resume-nested">
+          <BulletList items={moxaProductItems} />
+        </div>
+
+        <p className="resume-subgroup">Collaboration</p>
+        <div className="resume-nested">
+          <BulletList items={moxaCollaborationItems} />
+        </div>
+
+        <p className="resume-subgroup">Customer Support</p>
+        <div className="resume-nested">
+          <BulletList items={moxaSupportItems} />
+        </div>
+      </section>
+    </main>
   );
 }

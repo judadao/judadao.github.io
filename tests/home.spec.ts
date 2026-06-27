@@ -32,9 +32,9 @@ test('print resume route renders the PDF source layout', async ({ page }) => {
   await page.goto('/resume', { waitUntil: 'domcontentloaded' });
 
   await expect(page.getByRole('heading', { name: /Ju Ta Tao/i })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Work Experience' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Skills' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Education' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /Work Experience/i })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /Skills/i })).toBeVisible();
+  await expect(page.getByText(/Education:/i)).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Projects' })).toHaveCount(0);
 });
 
