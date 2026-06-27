@@ -93,54 +93,6 @@ export default function Home() {
       </section>
 
       <section>
-        <h2>Projects</h2>
-        <div className="projects">
-          {projects.map((project) => (
-            <article className="project" key={project.repo}>
-              <div className="project-header">
-                <div>
-                  <div className="company">{project.name}</div>
-                  <div className="date">{project.repo}</div>
-                </div>
-                <div className="project-links">
-                  <a href={project.repoUrl} target="_blank">
-                    GitHub
-                  </a>
-                  <a href={project.postUrl} target="_blank">
-                    LinkedIn
-                  </a>
-                </div>
-              </div>
-
-              <p>{project.description}</p>
-
-              <div className="skills">
-                {project.tags.map((tag) => (
-                  <span className="skill" key={tag}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <span className="label">Core Features</span>
-              <ul>
-                {project.features.map((feature) => (
-                  <li key={feature}>{feature}</li>
-                ))}
-              </ul>
-
-              <span className="label">Results</span>
-              <ul>
-                {project.highlights.map((highlight) => (
-                  <li key={highlight}>{highlight}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section>
         <h2>Work Experience</h2>
 
         <div className="company">Moxa Inc. | Software Engineer R&D</div>
@@ -197,6 +149,54 @@ export default function Home() {
               <li>Developed embedded and RTOS-based ARM projects.</li>
             </ul>
           </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+        <div className="projects">
+          {projects.map((project) => (
+            <article className="project" key={project.repo}>
+              <div className="project-header">
+                <div>
+                  <div className="company">{project.name}</div>
+                  <div className="date">{project.repo}</div>
+                </div>
+                <div className="project-links">
+                  <a href={project.repoUrl} target="_blank">
+                    GitHub
+                  </a>
+                  <a href={project.postUrl} target="_blank">
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+
+              <p>{project.description}</p>
+
+              <div className="skills">
+                {project.tags.map((tag) => (
+                  <span className="skill" key={tag}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <span className="label">Core Features</span>
+              <ul>
+                {project.features.map((feature) => (
+                  <li key={feature}>{feature}</li>
+                ))}
+              </ul>
+
+              <span className="label">Results</span>
+              <ul>
+                {project.highlights.map((highlight) => (
+                  <li key={highlight}>{highlight}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
       </section>
     </main>
