@@ -12,6 +12,30 @@ const skills = [
   'AI / Deep Learning',
 ];
 
+const projects = [
+  {
+    name: 'Decentralized MQTT Broker Mesh',
+    repo: 'judadao/mqtt_field_bridge_app',
+    repoUrl: 'https://github.com/judadao/mqtt_field_bridge_app',
+    postUrl:
+      'https://www.linkedin.com/posts/tatao-ju_mqtt-iot-embeddedsystems-share-7476474415333941248-bGhB/',
+    description:
+      'High-availability MQTT broker mesh for Zephyr, ESP32, and Linux edge deployments.',
+    tags: ['MQTT', 'Zephyr', 'ESP32', 'Linux', 'Edge IoT'],
+    features: [
+      'Lightweight MQTT broker running on Zephyr RTOS, ESP32, and Linux.',
+      'Broker Mesh that synchronizes publish/subscribe traffic across nodes.',
+      'Failover and fallback path that keeps clients online during broker failures.',
+      'Automatic load balancing for client connections and topic subscriptions.',
+    ],
+    highlights: [
+      'Validated with ESP32 Wi-Fi brokers, ESP32 + W5500 Ethernet brokers, and Linux brokers.',
+      'Reached 99.99% delivery in fixed-message broker failure recovery tests.',
+      'Matched Mosquitto-level throughput in single-broker benchmark testing.',
+    ],
+  },
+];
+
 export default function Home() {
   return (
     <main className="container">
@@ -64,6 +88,54 @@ export default function Home() {
             <span className="skill" key={skill}>
               {skill}
             </span>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+        <div className="projects">
+          {projects.map((project) => (
+            <article className="project" key={project.repo}>
+              <div className="project-header">
+                <div>
+                  <div className="company">{project.name}</div>
+                  <div className="date">{project.repo}</div>
+                </div>
+                <div className="project-links">
+                  <a href={project.repoUrl} target="_blank">
+                    GitHub
+                  </a>
+                  <a href={project.postUrl} target="_blank">
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+
+              <p>{project.description}</p>
+
+              <div className="skills">
+                {project.tags.map((tag) => (
+                  <span className="skill" key={tag}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <span className="label">Core Features</span>
+              <ul>
+                {project.features.map((feature) => (
+                  <li key={feature}>{feature}</li>
+                ))}
+              </ul>
+
+              <span className="label">Results</span>
+              <ul>
+                {project.highlights.map((highlight) => (
+                  <li key={highlight}>{highlight}</li>
+                ))}
+              </ul>
+            </article>
           ))}
         </div>
       </section>
