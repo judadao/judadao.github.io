@@ -34,7 +34,7 @@ test('print resume route renders the PDF source layout', async ({ page }) => {
   await expect(page.getByRole('heading', { name: /Ju Ta Tao/i })).toBeVisible();
   await expect(page.getByRole('heading', { name: /Work Experience/i })).toBeVisible();
   await expect(page.getByRole('heading', { name: /Skills/i })).toBeVisible();
-  await expect(page.getByText(/Education:/i)).toBeVisible();
+  await expect(page.getByRole('heading', { name: /Education/i })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Projects' })).toHaveCount(0);
 });
 
