@@ -2,11 +2,8 @@ const skills = [
   'C / C++ / Python',
   'Zephyr / FreeRTOS',
   'Embedded Linux',
-  'Modbus TCP',
-  'SNMP',
-  'MQTT',
-  'CI/CD',
-  'Docker',
+  'Modbus TCP / SNMP / MQTT',
+  'CI/CD / Docker',
   'ARM',
   'AI / Deep Learning',
 ];
@@ -65,6 +62,10 @@ function BulletList({ items }: Readonly<{ items: string[] }>) {
   );
 }
 
+function SectionTitle({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <h2 className="section-title">{children}</h2>;
+}
+
 export default function ResumePage() {
   return (
     <main className="resume-page">
@@ -72,174 +73,139 @@ export default function ResumePage() {
         .resume-page {
           --primary: #0f6f78;
           --primary-dark: #084f57;
-          --primary-light: #d6f3f5;
-          --secondary: #6d5dfc;
-          --surface: #ffffff;
-          --surface-soft: #f6f8fb;
+          --primary-light: #e7f7f8;
           --text: #18202a;
           --muted: #5c6675;
-          --line: #d6dde6;
+          --line: #b9c6cf;
           width: 210mm;
           height: 297mm;
           margin: 0 auto;
-          padding: 8mm;
-          background: var(--surface-soft);
+          padding: 10mm 12mm;
+          background: #ffffff;
           color: var(--text);
           overflow: hidden;
-          font-family: Inter, Arial, Helvetica, sans-serif;
+          font-family: Arial, Helvetica, sans-serif;
           font-size: 12.5px;
-          line-height: 1.42;
+          line-height: 1.38;
         }
 
-        .resume-hero {
+        .top {
           display: grid;
-          grid-template-columns: 48mm 1fr;
-          gap: 7mm;
-          align-items: stretch;
-          margin-bottom: 4mm;
+          grid-template-columns: 42mm 1fr;
+          gap: 8mm;
+          align-items: center;
+          padding-bottom: 5mm;
+          border-bottom: 2px solid var(--primary);
         }
 
-        .resume-photo {
-          width: 48mm;
-          height: 43mm;
+        .photo {
+          width: 42mm;
+          height: 42mm;
           object-fit: cover;
           object-position: center top;
           display: block;
-          border-radius: 8px;
-          border: 2px solid var(--primary-dark);
-          background: var(--primary-dark);
         }
 
-        .resume-hero-card,
-        .resume-card {
-          background: var(--surface);
-          border: 1px solid var(--line);
-          border-radius: 8px;
-        }
-
-        .resume-hero-card {
-          padding: 4.5mm 5mm;
-          display: grid;
-          grid-template-columns: 1fr 47mm;
-          gap: 5mm;
-          align-items: center;
-        }
-
-        .resume-chip {
-          display: inline-block;
-          padding: 1.4mm 2.4mm;
-          border-radius: 8px;
-          background: var(--primary);
-          color: #ffffff;
-          font-size: 11px;
-          font-weight: 800;
+        .name {
+          margin: 0;
+          font-size: 31px;
           line-height: 1;
-        }
-
-        .resume-name {
-          margin: 2.4mm 0 1.4mm;
-          font-size: 32px;
-          line-height: 0.98;
-          font-weight: 900;
+          font-weight: 800;
           letter-spacing: 0;
         }
 
-        .resume-name span {
+        .name span {
           color: var(--primary);
         }
 
-        .resume-summary {
+        .role {
+          margin: 2mm 0 2.5mm;
+          color: var(--primary-dark);
+          font-size: 14px;
+          font-weight: 800;
+        }
+
+        .summary {
+          max-width: 132mm;
           margin: 0;
           color: var(--muted);
-          font-size: 12.5px;
+          font-size: 12.2px;
         }
 
-        .resume-contact {
-          border-left: 3px solid var(--primary);
-          padding-left: 3mm;
+        .contact {
+          display: flex;
+          gap: 5mm;
+          margin-top: 3mm;
           color: var(--muted);
-          font-size: 11.4px;
+          font-size: 11.5px;
         }
 
-        .resume-contact p {
-          margin: 0 0 1.3mm;
-        }
-
-        .resume-contact a {
+        .contact a {
           color: var(--primary-dark);
           text-decoration: none;
         }
 
-        .resume-band {
+        .band {
+          margin: 5mm 0;
           padding: 4mm;
-          margin-bottom: 4mm;
           background: var(--primary-light);
-          border-radius: 8px;
-          border: 1px solid #bddfe3;
         }
 
-        .resume-section-title {
-          margin: 0 0 2.2mm;
-          font-size: 20px;
-          line-height: 1.1;
-          font-weight: 900;
-          letter-spacing: 0;
+        .section-title {
+          margin: 0 0 2mm;
           color: var(--primary-dark);
-        }
-
-        .resume-about {
-          margin: 0 0 3.3mm;
-          font-size: 13px;
-          line-height: 1.55;
-          font-weight: 700;
-          color: var(--text);
-        }
-
-        .resume-skills {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 1.5mm;
-        }
-
-        .resume-skill {
-          padding: 1.25mm 2mm;
-          border: 1px solid var(--primary);
-          border-radius: 8px;
-          background: #ffffff;
-          color: var(--primary-dark);
-          font-size: 10.3px;
+          font-size: 18px;
+          line-height: 1.15;
           font-weight: 800;
-          line-height: 1;
+          letter-spacing: 0;
         }
 
-        .resume-grid {
+        .about {
+          margin: 0 0 3mm;
+          font-size: 12.6px;
+          font-weight: 700;
+          line-height: 1.5;
+        }
+
+        .skills {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 4mm;
-          margin-bottom: 4mm;
-        }
-
-        .resume-card {
-          padding: 3.5mm;
-        }
-
-        .resume-card-title {
+          gap: 1.2mm 8mm;
           margin: 0;
-          font-size: 14.5px;
-          line-height: 1.18;
-          font-weight: 900;
+          padding-left: 5mm;
         }
 
-        .resume-date {
-          margin: 0.7mm 0 1.1mm;
+        .skills li {
+          font-size: 11.7px;
+          margin: 0;
+        }
+
+        .two-col {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 6mm;
+        }
+
+        .entry {
+          margin-bottom: 3mm;
+        }
+
+        .entry-title {
+          margin: 0;
+          font-size: 15px;
+          line-height: 1.2;
+          font-weight: 800;
+        }
+
+        .date {
+          margin: 0.5mm 0 1mm;
           color: var(--muted);
-          font-size: 10.8px;
+          font-size: 11.2px;
         }
 
-        .resume-degree {
+        .degree {
           margin: 0 0 1mm;
-          font-size: 11.5px;
-          line-height: 1.25;
+          font-size: 11.8px;
         }
 
         .resume-list {
@@ -249,54 +215,33 @@ export default function ResumePage() {
         }
 
         .resume-list li {
-          margin-bottom: 0.9mm;
-          padding-left: 0.8mm;
-          font-size: 11.1px;
+          margin-bottom: 0.8mm;
+          padding-left: 0.7mm;
+          font-size: 11.4px;
         }
 
-        .resume-work-head {
-          padding-bottom: 2.1mm;
-          border-bottom: 2px solid var(--primary);
-          margin-bottom: 3mm;
+        .work {
+          margin-top: 4mm;
+          padding-top: 4mm;
+          border-top: 1px solid var(--line);
         }
 
-        .resume-work-subtitle {
-          margin: 1mm 0 0;
+        .work-intro {
+          margin: 0 0 3mm;
           color: var(--muted);
-          font-size: 11.2px;
+          font-size: 11.6px;
         }
 
-        .resume-role {
-          margin: 0;
-          font-size: 16px;
-          font-weight: 900;
-        }
-
-        .resume-tag {
-          display: inline-block;
-          padding: 1.1mm 2mm;
-          border-radius: 8px;
-          background: #edf1f5;
-          color: var(--text);
-          font-size: 10.6px;
+        .subhead {
+          margin: 2.5mm 0 0.8mm;
+          color: var(--primary-dark);
+          font-size: 12.8px;
           font-weight: 800;
-          line-height: 1;
         }
 
-        .resume-work-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 3mm;
-          margin-top: 2.6mm;
-        }
-
-        .resume-work-grid .wide {
-          grid-column: 1 / -1;
-        }
-
-        .resume-footer-role {
-          margin-top: 3.2mm;
-          padding-top: 2.4mm;
+        .intern {
+          margin-top: 3.5mm;
+          padding-top: 3mm;
           border-top: 1px solid var(--line);
         }
 
@@ -307,97 +252,85 @@ export default function ResumePage() {
         }
       `}</style>
 
-      <section className="resume-hero">
+      <section className="top">
         <img
-          className="resume-photo"
+          className="photo"
           src="/assets/resume-profile.jpg"
           alt="Harry Ju profile photo"
         />
-
-        <div className="resume-hero-card">
-          <div>
-            <span className="resume-chip">Embedded Software Engineer</span>
-            <h1 className="resume-name">
-              Ju Ta Tao <span>(Harry)</span>
-            </h1>
-            <p className="resume-summary">
-              Embedded software engineer focused on RTOS, OT protocols, and
-              system architecture.
-            </p>
-          </div>
-          <div className="resume-contact">
-            <p>Taiwan</p>
-            <p>
-              <a href="mailto:harryju3@gmail.com">harryju3@gmail.com</a>
-            </p>
-            <p>(+886) 988-633-765</p>
+        <div>
+          <h1 className="name">
+            Ju Ta Tao <span>(Harry)</span>
+          </h1>
+          <p className="role">Embedded Software Engineer</p>
+          <p className="summary">
+            Embedded software engineer focused on RTOS, OT protocols, and
+            system architecture.
+          </p>
+          <div className="contact">
+            <span>Taiwan</span>
+            <a href="mailto:harryju3@gmail.com">harryju3@gmail.com</a>
+            <span>(+886) 988-633-765</span>
           </div>
         </div>
       </section>
 
-      <section className="resume-band">
-        <h2 className="resume-section-title">About Me</h2>
-        <p className="resume-about">
+      <section className="band">
+        <SectionTitle>About Me</SectionTitle>
+        <p className="about">
           Enjoy building reliable systems, collaborating across teams, and
           continuously learning new technologies. Outside of work, I stay active
           through basketball and enjoy exploring technical topics.
         </p>
 
-        <h2 className="resume-section-title">Skills</h2>
-        <div className="resume-skills">
+        <SectionTitle>Skills</SectionTitle>
+        <ul className="skills">
           {skills.map((skill) => (
-            <span className="resume-skill" key={skill}>
-              {skill}
-            </span>
+            <li key={skill}>{skill}</li>
           ))}
-        </div>
+        </ul>
       </section>
 
       <section>
-        <h2 className="resume-section-title">Education</h2>
-        <div className="resume-grid">
+        <SectionTitle>Education</SectionTitle>
+        <div className="two-col">
           {education.map((item) => (
-            <article className="resume-card" key={item.school}>
-              <h3 className="resume-card-title">{item.school}</h3>
-              <p className="resume-date">{item.period}</p>
-              <p className="resume-degree">{item.degree}</p>
+            <article className="entry" key={item.school}>
+              <h3 className="entry-title">{item.school}</h3>
+              <p className="date">{item.period}</p>
+              <p className="degree">{item.degree}</p>
               <BulletList items={item.items} />
             </article>
           ))}
         </div>
       </section>
 
-      <section className="resume-card">
-        <div className="resume-work-head">
-          <h2 className="resume-section-title">Work Experience</h2>
-          <p className="resume-work-subtitle">
-            Embedded product development, industrial protocols, customer issue
-            resolution, and cross-functional delivery.
-          </p>
-        </div>
+      <section className="work">
+        <SectionTitle>Work Experience</SectionTitle>
+        <p className="work-intro">
+          Embedded product development, industrial protocols, customer issue
+          resolution, and cross-functional delivery.
+        </p>
 
-        <h3 className="resume-role">Moxa Inc. | Software Engineer R&D</h3>
-        <p className="resume-date">2023 - Present</p>
+        <article>
+          <h3 className="entry-title">Moxa Inc. | Software Engineer R&D</h3>
+          <p className="date">2023 - Present</p>
 
-        <div className="resume-work-grid">
           {workGroups.map((group) => (
-            <article
-              className={`resume-card ${group.label === 'Product Development' ? 'wide' : ''}`}
-              key={group.label}
-            >
-              <span className="resume-tag">{group.label}</span>
+            <div key={group.label}>
+              <p className="subhead">{group.label}</p>
               <BulletList items={group.items} />
-            </article>
+            </div>
           ))}
-        </div>
+        </article>
 
-        <div className="resume-footer-role">
-          <h3 className="resume-role">Academia Sinica | Intern</h3>
-          <p className="resume-date">Jul. 2019 - Sep. 2019</p>
+        <article className="intern">
+          <h3 className="entry-title">Academia Sinica | Intern</h3>
+          <p className="date">Jul. 2019 - Sep. 2019</p>
           <BulletList
             items={['Developed speech recognition web applications.']}
           />
-        </div>
+        </article>
       </section>
     </main>
   );
