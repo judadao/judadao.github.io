@@ -12,3 +12,8 @@ body {
 a {
   color: inherit;
 }
+
+@page {
+  size: A4;
+  margin: 0;
+}

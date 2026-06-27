@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "preview": "next dev",
+    "pdf:resume": "node scripts/generate-resume-pdf.mjs",
     "serve:out": "serve out -l 4173",
     "test:e2e": "npm run build && playwright test"
   },

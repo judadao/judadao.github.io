@@ -17,6 +17,12 @@ Run the production export tests before deploying:
 npm run test:e2e
 ```
 
+Regenerate the resume PDF from the Material-styled resume page:
+
+```powershell
+npm run pdf:resume
+```
+
 ## Structure
 
 - `app/page.tsx` - page content

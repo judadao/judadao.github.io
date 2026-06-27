@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 test('renders the main profile sections', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/', { waitUntil: 'domcontentloaded' });
 
   await expect(page.getByRole('heading', { name: /Ju Ta Tao/i })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Skills' })).toBeVisible();
@@ -12,7 +12,7 @@ test('renders the main profile sections', async ({ page }) => {
 });
 
 test('resume actions point to the exported PDF', async ({ page, request }) => {
-  await page.goto('/');
+  await page.goto('/', { waitUntil: 'domcontentloaded' });
 
   const viewResume = page.getByRole('link', { name: /view resume/i });
   const downloadResume = page.getByRole('link', { name: /download pdf/i });
@@ -25,10 +25,20 @@ test('resume actions point to the exported PDF', async ({ page, request }) => {
   const pdfResponse = await request.get('/assets/English_CV.pdf');
   expect(pdfResponse.ok()).toBeTruthy();
   expect(pdfResponse.headers()['content-type']).toContain('pdf');
+  expect((await pdfResponse.body()).length).toBeGreaterThan(100000);
+});
+
+test('print resume route renders the PDF source layout', async ({ page }) => {
+  await page.goto('/resume', { waitUntil: 'domcontentloaded' });
+
+  await expect(page.getByRole('heading', { name: /Ju Ta Tao/i })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Work Experience' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Projects' })).toBeVisible();
+  await expect(page.getByText('github.com/judadao/mqtt_field_bridge_app')).toBeVisible();
 });
 
 test('project links open the expected external targets', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/', { waitUntil: 'domcontentloaded' });
 
   const githubLink = page.getByRole('link', { name: 'GitHub' });
   const linkedInLink = page.getByRole('link', { name: 'LinkedIn' });
