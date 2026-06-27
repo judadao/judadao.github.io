@@ -6,7 +6,6 @@ import {
   Container,
   Divider,
   Grid,
-  Stack,
   Typography,
 } from '@mui/material';
 
@@ -61,7 +60,7 @@ function BulletList({ items }: Readonly<{ items: string[] }>) {
   return (
     <Box component="ul" sx={{ color: 'text.secondary', pl: 2.3, my: 1 }}>
       {items.map((item) => (
-        <Typography component="li" key={item} sx={{ mb: 0.35, fontSize: 12.2 }}>
+        <Typography component="li" key={item} sx={{ mb: 0.28, fontSize: 11.6 }}>
           {item}
         </Typography>
       ))}
@@ -88,165 +87,159 @@ export default function ResumePage() {
         sx={{
           width: '210mm',
           minHeight: '297mm',
-          p: 2.2,
+          p: 1.8,
           bgcolor: '#f6f8fb',
           '@media print': {
             width: '210mm',
             minHeight: '297mm',
-            p: 2.1,
+            p: 1.7,
           },
         }}
       >
-        <Card elevation={0} sx={{ ...cardSx, overflow: 'hidden', mb: 1.8 }}>
-          <Grid container>
-            <Grid size={8}>
-              <CardContent sx={{ p: 2.4 }}>
+        <Card elevation={0} sx={{ ...cardSx, overflow: 'hidden', mb: 1.3 }}>
+          <CardContent sx={{ p: 2 }}>
+            <Grid container spacing={1.6} sx={{ alignItems: 'center' }}>
+              <Grid size={8.6}>
                 <Chip
                   label="Embedded Software Engineer"
                   color="primary"
                   size="small"
-                  sx={{ mb: 1.2 }}
+                  sx={{ mb: 0.9 }}
                 />
                 <Typography
                   component="h1"
                   variant="h3"
-                  sx={{ fontWeight: 900, lineHeight: 1, letterSpacing: 0 }}
+                  sx={{ fontWeight: 900, lineHeight: 0.95, letterSpacing: 0 }}
                 >
                   Ju Ta Tao{' '}
                   <Box component="span" sx={{ color: 'primary.main' }}>
                     (Harry)
                   </Box>
                 </Typography>
-                <Typography color="text.secondary" sx={{ mt: 1, fontSize: 12.5 }}>
-                  Taiwan | harryju3@gmail.com | (+886) 988-633-765
-                </Typography>
                 <Typography
                   sx={{
-                    mt: 1.4,
+                    mt: 1.1,
                     color: 'text.secondary',
-                    fontSize: 13.5,
+                    fontSize: 12.6,
                     maxWidth: 560,
                   }}
                 >
                   Embedded software engineer focused on RTOS, OT protocols, and
                   system architecture.
                 </Typography>
-              </CardContent>
+              </Grid>
+              <Grid size={3.4}>
+                <Box
+                  sx={{
+                    borderLeft: '3px solid',
+                    borderColor: 'primary.main',
+                    pl: 1.5,
+                  }}
+                >
+                  <Typography sx={{ fontSize: 11.7, color: 'text.secondary' }}>
+                    Taiwan
+                  </Typography>
+                  <Typography sx={{ fontSize: 11.7, color: 'text.secondary' }}>
+                    harryju3@gmail.com
+                  </Typography>
+                  <Typography sx={{ fontSize: 11.7, color: 'text.secondary' }}>
+                    (+886) 988-633-765
+                  </Typography>
+                </Box>
+              </Grid>
             </Grid>
-            <Grid
-              size={4}
-              sx={{
-                bgcolor: 'primary.light',
-                display: 'grid',
-                placeItems: 'center',
-                p: 1.8,
-              }}
-            >
-              <Box
-                component="img"
-                src="/assets/profile.png"
-                alt="Harry Ju profile photo"
-                sx={{
-                  width: 120,
-                  height: 145,
-                  objectFit: 'cover',
-                  objectPosition: 'center top',
-                  borderRadius: 2,
-                  boxShadow: '0 14px 34px rgba(15, 111, 120, 0.2)',
-                }}
-              />
-            </Grid>
-          </Grid>
+          </CardContent>
         </Card>
 
-        <Grid container spacing={1.6}>
-          <Grid size={7}>
-            <Stack spacing={1.6}>
-              <Card elevation={0} sx={cardSx}>
-                <CardContent sx={{ p: 2 }}>
-                  <SectionTitle>Work Experience</SectionTitle>
-                  <Typography sx={{ fontWeight: 850, fontSize: 15 }}>
-                    Moxa Inc. | Software Engineer R&D
-                  </Typography>
-                  <Typography color="text.secondary" sx={{ fontSize: 12 }}>
-                    2023 - Present
-                  </Typography>
-                  <BulletList items={workItems} />
+        <Grid container spacing={1.3}>
+          <Grid size={4}>
+            <Card elevation={0} sx={{ ...cardSx, mb: 1.3 }}>
+              <CardContent sx={{ p: 1.75 }}>
+                <SectionTitle>Skills</SectionTitle>
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.55 }}>
+                  {skills.map((skill) => (
+                    <Chip
+                      key={skill}
+                      label={skill}
+                      color="primary"
+                      variant="outlined"
+                      size="small"
+                      sx={{
+                        height: 23,
+                        '& .MuiChip-label': {
+                          px: 0.8,
+                          fontSize: 10.6,
+                        },
+                      }}
+                    />
+                  ))}
+                </Box>
+              </CardContent>
+            </Card>
 
-                  <Divider sx={{ my: 1.1 }} />
+            <Card elevation={0} sx={cardSx}>
+              <CardContent sx={{ p: 1.75 }}>
+                <SectionTitle>Education</SectionTitle>
+                <Typography sx={{ fontWeight: 850, fontSize: 13.5 }}>
+                  National Chung Cheng University
+                </Typography>
+                <Typography color="text.secondary" sx={{ fontSize: 11.4 }}>
+                  2020 - 2022
+                </Typography>
+                <Typography sx={{ mt: 0.45, fontSize: 11.7 }}>
+                  M.S. in Computer Science and Information Engineering
+                </Typography>
+                <BulletList
+                  items={[
+                    'AI and speech recognition research using PyTorch.',
+                    'Focused on low-resource speech recognition systems.',
+                  ]}
+                />
 
-                  <Typography sx={{ fontWeight: 850, fontSize: 15 }}>
-                    Academia Sinica | Intern
-                  </Typography>
-                  <Typography color="text.secondary" sx={{ fontSize: 12 }}>
-                    Jul. 2019 - Sep. 2019
-                  </Typography>
-                  <BulletList
-                    items={['Developed speech recognition web applications.']}
-                  />
-                </CardContent>
-              </Card>
-            </Stack>
+                <Divider sx={{ my: 1 }} />
+
+                <Typography sx={{ fontWeight: 850, fontSize: 13.5 }}>
+                  Chang Gung University
+                </Typography>
+                <Typography color="text.secondary" sx={{ fontSize: 11.4 }}>
+                  2015 - 2020
+                </Typography>
+                <Typography sx={{ mt: 0.45, fontSize: 11.7 }}>
+                  B.S. in Computer Science and Information Engineering
+                </Typography>
+                <BulletList
+                  items={[
+                    'Built AI and speech recognition projects using TensorFlow and Django.',
+                    'Developed embedded and RTOS-based ARM projects.',
+                  ]}
+                />
+              </CardContent>
+            </Card>
           </Grid>
 
-          <Grid size={5}>
-            <Stack spacing={1.6}>
-              <Card elevation={0} sx={cardSx}>
-                <CardContent sx={{ p: 2 }}>
-                  <SectionTitle>Skills</SectionTitle>
-                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.7 }}>
-                    {skills.map((skill) => (
-                      <Chip
-                        key={skill}
-                        label={skill}
-                        color="primary"
-                        variant="outlined"
-                        size="small"
-                      />
-                    ))}
-                  </Box>
-                </CardContent>
-              </Card>
+          <Grid size={8}>
+            <Card elevation={0} sx={cardSx}>
+              <CardContent sx={{ p: 1.9 }}>
+                <SectionTitle>Work Experience</SectionTitle>
+                <Typography sx={{ fontWeight: 850, fontSize: 15 }}>
+                  Moxa Inc. | Software Engineer R&D
+                </Typography>
+                <Typography color="text.secondary" sx={{ fontSize: 11.7 }}>
+                  2023 - Present
+                </Typography>
+                <BulletList items={workItems} />
 
-              <Card elevation={0} sx={cardSx}>
-                <CardContent sx={{ p: 2 }}>
-                  <SectionTitle>Education</SectionTitle>
-                  <Typography sx={{ fontWeight: 850, fontSize: 15 }}>
-                    National Chung Cheng University
-                  </Typography>
-                  <Typography color="text.secondary" sx={{ fontSize: 12 }}>
-                    2020 - 2022
-                  </Typography>
-                  <Typography sx={{ mt: 0.7, fontSize: 12.5 }}>
-                    M.S. in Computer Science and Information Engineering
-                  </Typography>
-                  <BulletList
-                    items={[
-                      'AI and speech recognition research using PyTorch.',
-                      'Focused on low-resource speech recognition systems.',
-                    ]}
-                  />
+                <Divider sx={{ my: 1 }} />
 
-                  <Divider sx={{ my: 1.1 }} />
-
-                  <Typography sx={{ fontWeight: 850, fontSize: 15 }}>
-                    Chang Gung University
-                  </Typography>
-                  <Typography color="text.secondary" sx={{ fontSize: 12 }}>
-                    2015 - 2020
-                  </Typography>
-                  <Typography sx={{ mt: 0.7, fontSize: 12.5 }}>
-                    B.S. in Computer Science and Information Engineering
-                  </Typography>
-                  <BulletList
-                    items={[
-                      'Built AI and speech recognition projects using TensorFlow and Django.',
-                      'Developed embedded and RTOS-based ARM projects.',
-                    ]}
-                  />
-                </CardContent>
-              </Card>
-            </Stack>
+                <Typography sx={{ fontWeight: 850, fontSize: 15 }}>
+                  Academia Sinica | Intern
+                </Typography>
+                <Typography color="text.secondary" sx={{ fontSize: 11.7 }}>
+                  Jul. 2019 - Sep. 2019
+                </Typography>
+                <BulletList items={['Developed speech recognition web applications.']} />
+              </CardContent>
+            </Card>
           </Grid>
         </Grid>
       </Container>
