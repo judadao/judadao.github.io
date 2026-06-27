@@ -7,7 +7,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "preview": "next dev"
+    "preview": "next dev",
+    "serve:out": "serve out -l 4173",
+    "test:e2e": "npm run build && playwright test"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
@@ -21,9 +23,11 @@
     "react-dom": "latest"
   },
   "devDependencies": {
+    "@playwright/test": "^1.61.1",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "serve": "^14.2.6",
     "typescript": "latest"
   },
   "overrides": {

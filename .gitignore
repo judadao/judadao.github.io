@@ -9,6 +9,8 @@ Thumbs.db
 node_modules/
 .next/
 out/
+test-results/
+playwright-report/
 
 # Temporary GitHub Pages artifact directory
 _site/

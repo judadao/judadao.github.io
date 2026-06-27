@@ -11,6 +11,12 @@ npm run dev
 
 Open `http://localhost:3000`.
 
+Run the production export tests before deploying:
+
+```powershell
+npm run test:e2e
+```
+
 ## Structure
 
 - `app/page.tsx` - page content
