@@ -33,8 +33,9 @@ test('print resume route renders the PDF source layout', async ({ page }) => {
 
   await expect(page.getByRole('heading', { name: /Ju Ta Tao/i })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Work Experience' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Projects' })).toBeVisible();
-  await expect(page.getByText('github.com/judadao/mqtt_field_bridge_app')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Skills' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Education' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Projects' })).toHaveCount(0);
 });
 
 test('project links open the expected external targets', async ({ page }) => {

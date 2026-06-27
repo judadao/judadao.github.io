@@ -10,7 +10,7 @@
     "preview": "next dev",
     "pdf:resume": "node scripts/generate-resume-pdf.mjs",
     "serve:out": "serve out -l 4173",
-    "test:e2e": "npm run build && playwright test"
+    "test:e2e": "npm run build && playwright test && node scripts/assert-resume-pdf.mjs"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",

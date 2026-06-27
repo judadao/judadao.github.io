@@ -1,4 +1,3 @@
-import GitHubIcon from '@mui/icons-material/GitHub';
 import {
   Box,
   Card,
@@ -32,19 +31,6 @@ const workItems = [
   'Optimized system reliability on constrained platforms.',
   'Resolved customer issues across protocol and embedded systems.',
   'Worked with PM, QA, and front-end teams on embedded products.',
-];
-
-const projectFeatures = [
-  'Lightweight MQTT broker running on Zephyr RTOS, ESP32, and Linux.',
-  'Broker Mesh that synchronizes publish/subscribe traffic across nodes.',
-  'Failover and fallback path that keeps clients online during broker failures.',
-  'Automatic load balancing for client connections and topic subscriptions.',
-];
-
-const projectHighlights = [
-  'Validated with ESP32 Wi-Fi brokers, ESP32 + W5500 Ethernet brokers, and Linux brokers.',
-  'Reached 99.99% delivery in fixed-message broker failure recovery tests.',
-  'Matched Mosquitto-level throughput in single-broker benchmark testing.',
 ];
 
 const cardSx = {
@@ -102,19 +88,19 @@ export default function ResumePage() {
         sx={{
           width: '210mm',
           minHeight: '297mm',
-          p: 2.6,
+          p: 2.2,
           bgcolor: '#f6f8fb',
           '@media print': {
             width: '210mm',
             minHeight: '297mm',
-            p: 2.3,
+            p: 2.1,
           },
         }}
       >
         <Card elevation={0} sx={{ ...cardSx, overflow: 'hidden', mb: 1.8 }}>
           <Grid container>
             <Grid size={8}>
-              <CardContent sx={{ p: 2.8 }}>
+              <CardContent sx={{ p: 2.4 }}>
                 <Chip
                   label="Embedded Software Engineer"
                   color="primary"
@@ -136,7 +122,7 @@ export default function ResumePage() {
                 </Typography>
                 <Typography
                   sx={{
-                    mt: 1.8,
+                    mt: 1.4,
                     color: 'text.secondary',
                     fontSize: 13.5,
                     maxWidth: 560,
@@ -153,7 +139,7 @@ export default function ResumePage() {
                 bgcolor: 'primary.light',
                 display: 'grid',
                 placeItems: 'center',
-                p: 2,
+                p: 1.8,
               }}
             >
               <Box
@@ -162,7 +148,7 @@ export default function ResumePage() {
                 alt="Harry Ju profile photo"
                 sx={{
                   width: 120,
-                  height: 150,
+                  height: 145,
                   objectFit: 'cover',
                   objectPosition: 'center top',
                   borderRadius: 2,
@@ -173,11 +159,11 @@ export default function ResumePage() {
           </Grid>
         </Card>
 
-        <Grid container spacing={1.8}>
+        <Grid container spacing={1.6}>
           <Grid size={7}>
-            <Stack spacing={1.8}>
+            <Stack spacing={1.6}>
               <Card elevation={0} sx={cardSx}>
-                <CardContent sx={{ p: 2.2 }}>
+                <CardContent sx={{ p: 2 }}>
                   <SectionTitle>Work Experience</SectionTitle>
                   <Typography sx={{ fontWeight: 850, fontSize: 15 }}>
                     Moxa Inc. | Software Engineer R&D
@@ -187,7 +173,7 @@ export default function ResumePage() {
                   </Typography>
                   <BulletList items={workItems} />
 
-                  <Divider sx={{ my: 1.4 }} />
+                  <Divider sx={{ my: 1.1 }} />
 
                   <Typography sx={{ fontWeight: 850, fontSize: 15 }}>
                     Academia Sinica | Intern
@@ -200,36 +186,13 @@ export default function ResumePage() {
                   />
                 </CardContent>
               </Card>
-
-              <Card elevation={0} sx={cardSx}>
-                <CardContent sx={{ p: 2.2 }}>
-                  <SectionTitle>Projects</SectionTitle>
-                  <Stack direction="row" spacing={0.8} sx={{ alignItems: 'center' }}>
-                    <GitHubIcon color="primary" fontSize="small" />
-                    <Typography sx={{ fontWeight: 850, fontSize: 15 }}>
-                      Decentralized MQTT Broker Mesh
-                    </Typography>
-                  </Stack>
-                  <Typography color="text.secondary" sx={{ fontSize: 12 }}>
-                    github.com/judadao/mqtt_field_bridge_app
-                  </Typography>
-                  <Typography sx={{ mt: 1, color: 'text.secondary', fontSize: 12.5 }}>
-                    High-availability MQTT broker mesh for Zephyr, ESP32, and
-                    Linux edge deployments.
-                  </Typography>
-                  <Chip label="Core Features" size="small" sx={{ mt: 1.2 }} />
-                  <BulletList items={projectFeatures} />
-                  <Chip label="Results" size="small" sx={{ mt: 0.4 }} />
-                  <BulletList items={projectHighlights} />
-                </CardContent>
-              </Card>
             </Stack>
           </Grid>
 
           <Grid size={5}>
-            <Stack spacing={1.8}>
+            <Stack spacing={1.6}>
               <Card elevation={0} sx={cardSx}>
-                <CardContent sx={{ p: 2.2 }}>
+                <CardContent sx={{ p: 2 }}>
                   <SectionTitle>Skills</SectionTitle>
                   <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.7 }}>
                     {skills.map((skill) => (
@@ -246,7 +209,7 @@ export default function ResumePage() {
               </Card>
 
               <Card elevation={0} sx={cardSx}>
-                <CardContent sx={{ p: 2.2 }}>
+                <CardContent sx={{ p: 2 }}>
                   <SectionTitle>Education</SectionTitle>
                   <Typography sx={{ fontWeight: 850, fontSize: 15 }}>
                     National Chung Cheng University
@@ -264,7 +227,7 @@ export default function ResumePage() {
                     ]}
                   />
 
-                  <Divider sx={{ my: 1.4 }} />
+                  <Divider sx={{ my: 1.1 }} />
 
                   <Typography sx={{ fontWeight: 850, fontSize: 15 }}>
                     Chang Gung University
